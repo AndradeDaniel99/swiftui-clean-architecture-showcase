@@ -63,13 +63,6 @@
             ReferencedContainer = "container:SwiftUICleanArchitectureShowcase.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
-      <EnvironmentVariables>
-         <EnvironmentVariable
-            key = "OMDB_API_KEY"
-            value = "fd72cb76"
-            isEnabled = "YES">
-         </EnvironmentVariable>
-      </EnvironmentVariables>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"

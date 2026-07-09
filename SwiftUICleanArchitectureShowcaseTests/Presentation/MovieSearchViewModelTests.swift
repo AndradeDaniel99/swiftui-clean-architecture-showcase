@@ -27,7 +27,7 @@ final class MovieSearchViewModelTests: XCTestCase {
 
         await viewModel.search()
 
-        XCTAssertEqual(viewModel.state, .failed("A busca falhou. Verifique sua conexao e tente novamente."))
+        XCTAssertEqual(viewModel.state, .failed("Search failed. Check your connection and try again."))
     }
 
     func testSearchSetsFailureStateWhenQueryIsEmpty() async {
@@ -38,6 +38,6 @@ final class MovieSearchViewModelTests: XCTestCase {
 
         await viewModel.search()
 
-        XCTAssertEqual(viewModel.state, .failed("Digite um termo para buscar filmes."))
+        XCTAssertEqual(viewModel.state, .failed("Enter a search term."))
     }
 }

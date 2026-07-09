@@ -13,8 +13,8 @@ struct MovieDetailsContentView: View {
                 .font(.subheadline)
                 .foregroundStyle(.secondary)
 
-            DetailLineView(title: "Genero", value: details.genre)
-            DetailLineView(title: "Direcao", value: details.director)
+            DetailLineView(title: "Genre", value: details.genre)
+            DetailLineView(title: "Director", value: details.director)
 
             Text(details.plot)
                 .font(.body)

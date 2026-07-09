@@ -1,10 +1,10 @@
 # SwiftUI Clean Architecture Showcase
 
-Aplicativo iOS pequeno para demonstrar SwiftUI, MVVM, Clean Architecture, REST API, async/await, dependency injection e testes unitarios.
+A small iOS app that demonstrates SwiftUI, MVVM, Clean Architecture, REST API integration, async/await, dependency injection, and unit tests.
 
-O produto e uma busca de filmes. Por padrao o app roda com dados locais de demonstracao para permitir build imediato. Para usar a OMDb API real, configure a variavel de ambiente `OMDB_API_KEY` no scheme do Xcode.
+The product is a movie search app. By default, the app runs with local demo data so it can build and run immediately. To use the real OMDb API, configure the `OMDB_API_KEY` environment variable in the Xcode scheme.
 
-## Arquitetura
+## Architecture
 
 ```text
 SwiftUICleanArchitectureShowcase
@@ -26,25 +26,25 @@ SwiftUICleanArchitectureShowcase
     └── Mappers
 ```
 
-## Decisoes tecnicas
+## Technical Decisions
 
-- `Domain` define entidades, casos de uso e o contrato `MovieRepository`.
-- `Presentation` depende de use cases e entidades, sem conhecer DTOs da OMDb.
-- `Data` concentra DTOs, cliente REST, mappers e implementacoes de repositorio.
-- ViewModels usam `@Observable` e `@MainActor`.
-- Testes usam `FakeMovieRepository`, sem chamadas reais de rede.
-- O fallback `PreviewMovieRepository` deixa o app executavel sem credenciais.
+- `Domain` defines entities, use cases, and the `MovieRepository` contract.
+- `Presentation` depends on use cases and entities without knowing about OMDb DTOs.
+- `Data` contains DTOs, the REST client, mappers, and repository implementations.
+- View models use `@Observable` and `@MainActor`.
+- Tests use `FakeMovieRepository` without making real network calls.
+- The `PreviewMovieRepository` fallback keeps the app runnable without credentials.
 
 ## Setup
 
-1. Abra `SwiftUICleanArchitectureShowcase.xcodeproj` no Xcode 26 ou superior.
-2. Se quiser consumir a API real, crie uma chave em `https://www.omdbapi.com/`.
-3. No scheme do app, adicione a variavel de ambiente `OMDB_API_KEY` com sua chave.
-4. Rode o target `SwiftUICleanArchitectureShowcase`.
+1. Open `SwiftUICleanArchitectureShowcase.xcodeproj` in Xcode 26 or later.
+2. If you want to use the real API, create an API key at `https://www.omdbapi.com/`.
+3. In the app scheme, add the `OMDB_API_KEY` environment variable with your key.
+4. Run the `SwiftUICleanArchitectureShowcase` target.
 
-## Testes
+## Tests
 
-Pelo terminal:
+From the terminal:
 
 ```sh
 xcodebuild test \
@@ -53,18 +53,18 @@ xcodebuild test \
   -destination 'platform=iOS Simulator,name=iPhone 17 Pro,OS=26.2'
 ```
 
-## Fluxo principal
+## Main Flow
 
 ```text
 Home
 ↓
-Busca por texto
+Text search
 ↓
-Lista de filmes
+Movie list
 ↓
-Detalhe do filme
+Movie details
 ```
 
 ## Screenshots
 
-As capturas devem ser adicionadas em `Docs/Screenshots/` quando o fluxo visual estiver estabilizado.
+Screenshots should be added to `Docs/Screenshots/` once the visual flow is stable.

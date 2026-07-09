@@ -19,7 +19,7 @@ final class MovieDetailViewModel {
         do {
             state = .loaded(try await getMovieDetailsUseCase.execute(id: movie.id))
         } catch {
-            state = .failed("Nao foi possivel carregar os detalhes do filme.")
+            state = .failed("Unable to load movie details.")
         }
     }
 }

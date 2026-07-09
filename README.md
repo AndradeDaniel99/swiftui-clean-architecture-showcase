@@ -7,9 +7,15 @@
 ![Tests](https://img.shields.io/badge/tests-passing-brightgreen.svg)
 ![License](https://img.shields.io/badge/license-MIT-lightgrey.svg)
 
-A small iOS movie search app built with SwiftUI, MVVM, Clean Architecture, REST API integration, async/await, dependency injection, and unit tests.
+A iOS movie search app built with SwiftUI, MVVM, Clean Architecture, REST API integration, async/await, dependency injection, and unit tests.
 
 This showcase is designed as a compact reference project: the UI stays simple, the architecture is explicit, and the domain layer remains independent from networking details.
+
+
+<img width="250"  alt="Movie search screen" src="https://github.com/user-attachments/assets/4ded531c-ef48-4de6-82ea-e37b5f8fab05" />
+
+
+<img width="250"  alt="Movie details screen" src="https://github.com/user-attachments/assets/7e51f9d6-5924-44cb-b4ac-13f7157b5cb3" />
 
 ---
 
@@ -131,13 +137,7 @@ xcodebuild test \
 
 ## Screenshots
 
-### Feature: Search Movies
 
-<img width="295" height="640" alt="Movie search screen" src="https://github.com/user-attachments/assets/4ded531c-ef48-4de6-82ea-e37b5f8fab05" />
-
-### Feature: Movie Details
-
-<img width="295" height="640" alt="Movie details screen" src="https://github.com/user-attachments/assets/7e51f9d6-5924-44cb-b4ac-13f7157b5cb3" />
 
 ## License
 

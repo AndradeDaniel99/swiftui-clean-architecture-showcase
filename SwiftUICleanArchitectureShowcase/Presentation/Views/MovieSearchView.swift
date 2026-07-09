@@ -18,7 +18,7 @@ struct MovieSearchView: View {
 
     private var searchField: some View {
         HStack(spacing: 8) {
-            TextField("Buscar filmes", text: $viewModel.query)
+            TextField("Search movies", text: $viewModel.query)
                 .textInputAutocapitalization(.never)
                 .submitLabel(.search)
                 .onSubmit {
@@ -27,7 +27,7 @@ struct MovieSearchView: View {
                     }
                 }
 
-            Button("Buscar", systemImage: "magnifyingglass") {
+            Button("Search", systemImage: "magnifyingglass") {
                 Task {
                     await viewModel.search()
                 }
@@ -40,9 +40,9 @@ struct MovieSearchView: View {
     private var content: some View {
         switch viewModel.state {
         case .idle:
-            EmptyStateView(title: "Busque um filme", message: "Digite um titulo para comecar.")
+            EmptyStateView(title: "Search for a movie", message: "Enter a title to get started.")
         case .loading:
-            LoadingView(message: "Buscando filmes...")
+            LoadingView(message: "Searching movies...")
         case let .loaded(movies):
             List(movies) { movie in
                 NavigationLink {
@@ -53,7 +53,7 @@ struct MovieSearchView: View {
             }
             .listStyle(.plain)
         case let .empty(message):
-            EmptyStateView(title: "Sem resultados", message: message)
+            EmptyStateView(title: "No results", message: message)
         case let .failed(message):
             ErrorStateView(message: message) {
                 Task {

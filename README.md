@@ -134,10 +134,6 @@ xcodebuild test \
   -destination 'platform=iOS Simulator,name=iPhone 17 Pro,OS=26.2'
 ```
 
-## Screenshots
-
-
-
 ## License
 
 SwiftUI Clean Architecture Showcase is available under the MIT License. See [LICENSE](LICENSE) for details.

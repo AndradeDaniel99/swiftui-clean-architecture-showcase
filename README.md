@@ -67,4 +67,9 @@ Movie details
 
 ## Screenshots
 
-Screenshots should be added to `Docs/Screenshots/` once the visual flow is stable.
+### Feature: Search Movies
+<img width="295" height="640" alt="Simulator Screen Recording - iPhone 17 Pro - 2026-07-09 at 17 26 16" src="https://github.com/user-attachments/assets/4ded531c-ef48-4de6-82ea-e37b5f8fab05" />
+
+### Feature: Movie Details
+<img width="295" height="640" alt="Simulator Screen Recording - iPhone 17 Pro - 2026-07-09 at 17 25 27" src="https://github.com/user-attachments/assets/7e51f9d6-5924-44cb-b4ac-13f7157b5cb3" />
+

@@ -26,11 +26,11 @@ struct MovieDetailView: View {
     private var content: some View {
         switch viewModel.state {
         case .idle, .loading:
-            LoadingView(message: "Carregando detalhes...")
+            LoadingView(message: "Loading details...")
         case let .loaded(details):
             MovieDetailsContentView(details: details)
         case let .empty(message):
-            EmptyStateView(title: "Detalhes indisponiveis", message: message)
+            EmptyStateView(title: "Details unavailable", message: message)
         case let .failed(message):
             ErrorStateView(message: message) {
                 Task {

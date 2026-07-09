@@ -6,11 +6,11 @@ struct ErrorStateView: View {
 
     var body: some View {
         ContentUnavailableView {
-            Label("Erro", systemImage: "exclamationmark.triangle")
+            Label("Error", systemImage: "exclamationmark.triangle")
         } description: {
             Text(message)
         } actions: {
-            Button("Tentar novamente", systemImage: "arrow.clockwise", action: retry)
+            Button("Try Again", systemImage: "arrow.clockwise", action: retry)
                 .buttonStyle(.borderedProminent)
         }
     }

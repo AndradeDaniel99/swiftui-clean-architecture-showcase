@@ -4,7 +4,6 @@
 ![Swift](https://img.shields.io/badge/Swift-6.2-orange.svg)
 ![Xcode](https://img.shields.io/badge/Xcode-26.2-blue.svg)
 ![Architecture](https://img.shields.io/badge/Architecture-Clean%20Architecture%20%2B%20MVVM-success.svg)
-![Tests](https://img.shields.io/badge/tests-passing-brightgreen.svg)
 ![License](https://img.shields.io/badge/license-MIT-lightgrey.svg)
 
 A iOS movie search app built with SwiftUI, MVVM, Clean Architecture, REST API integration, async/await, dependency injection, and unit tests.

@@ -58,7 +58,7 @@ xcodebuild test \
 ```text
 Home
 ↓
-Text search
+Movie search
 ↓
 Movie list
 ↓

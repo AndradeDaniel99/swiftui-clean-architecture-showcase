@@ -1,8 +1,54 @@
 # SwiftUI Clean Architecture Showcase
 
-A small iOS app that demonstrates SwiftUI, MVVM, Clean Architecture, REST API integration, async/await, dependency injection, and unit tests.
+![Platform](https://img.shields.io/badge/platform-iOS%2026.0+-blue.svg)
+![Swift](https://img.shields.io/badge/Swift-6.2-orange.svg)
+![Xcode](https://img.shields.io/badge/Xcode-26.2-blue.svg)
+![Architecture](https://img.shields.io/badge/Architecture-Clean%20Architecture%20%2B%20MVVM-success.svg)
+![Tests](https://img.shields.io/badge/tests-passing-brightgreen.svg)
+![License](https://img.shields.io/badge/license-MIT-lightgrey.svg)
 
-The product is a movie search app. By default, the app runs with local demo data so it can build and run immediately. To use the real OMDb API, configure the `OMDB_API_KEY` environment variable in the Xcode scheme.
+A small iOS movie search app built with SwiftUI, MVVM, Clean Architecture, REST API integration, async/await, dependency injection, and unit tests.
+
+This showcase is designed as a compact reference project: the UI stays simple, the architecture is explicit, and the domain layer remains independent from networking details.
+
+---
+
+## Table of Contents
+
+- [Requirements](#requirements)
+- [Features](#features)
+- [Architecture](#architecture)
+- [Technical Decisions](#technical-decisions)
+- [Setup](#setup)
+- [Configuration](#configuration)
+- [Tests](#tests)
+- [Screenshots](#screenshots)
+- [License](#license)
+
+## Requirements
+
+- **iOS 26.0+**
+- **Swift 6.2+**
+- **Xcode 26.2+**
+
+## Features
+
+### Movie Search
+
+- Search movies by title
+- Display a list of movie results
+- Open a movie detail screen
+- Show loading, empty, and error states
+- Retry a failed search
+
+### Architecture and Testing
+
+- Clean Architecture boundaries between `Presentation`, `Domain`, and `Data`
+- MVVM with SwiftUI and `@Observable`
+- Async/await based API calls
+- Dependency injection through `AppContainer`
+- Unit tests for use cases and view models
+- Fake repository for deterministic tests
 
 ## Architecture
 
@@ -26,6 +72,15 @@ SwiftUICleanArchitectureShowcase
     └── Mappers
 ```
 
+### Main Flow
+
+```text
+Home
+-> Movie search
+-> Movie list
+-> Movie details
+```
+
 ## Technical Decisions
 
 - `Domain` defines entities, use cases, and the `MovieRepository` contract.
@@ -38,9 +93,30 @@ SwiftUICleanArchitectureShowcase
 ## Setup
 
 1. Open `SwiftUICleanArchitectureShowcase.xcodeproj` in Xcode 26 or later.
-2. If you want to use the real API, create an API key at `https://www.omdbapi.com/`.
-3. In the app scheme, add the `OMDB_API_KEY` environment variable with your key.
-4. Run the `SwiftUICleanArchitectureShowcase` target.
+2. Select the `SwiftUICleanArchitectureShowcase` scheme.
+3. Run the `SwiftUICleanArchitectureShowcase` target.
+
+The app works out of the box with local demo data. Configure an OMDb API key only if you want to hit the real API.
+
+## Configuration
+
+### OMDb API Key
+
+Create an API key at [omdbapi.com](https://www.omdbapi.com/), then add it as an environment variable:
+
+```text
+Name:  OMDB_API_KEY
+Value: your_api_key
+```
+
+In Xcode:
+
+1. Open `Product` > `Scheme` > `Edit Scheme...`.
+2. Select `Run`.
+3. Open the `Arguments` tab.
+4. Add `OMDB_API_KEY` under `Environment Variables`.
+
+Avoid committing real API keys in shared Xcode schemes or any tracked file.
 
 ## Tests
 
@@ -53,23 +129,16 @@ xcodebuild test \
   -destination 'platform=iOS Simulator,name=iPhone 17 Pro,OS=26.2'
 ```
 
-## Main Flow
-
-```text
-Home
-↓
-Movie search
-↓
-Movie list
-↓
-Movie details
-```
-
 ## Screenshots
 
 ### Feature: Search Movies
-<img width="295" height="640" alt="Simulator Screen Recording - iPhone 17 Pro - 2026-07-09 at 17 26 16" src="https://github.com/user-attachments/assets/4ded531c-ef48-4de6-82ea-e37b5f8fab05" />
+
+<img width="295" height="640" alt="Movie search screen" src="https://github.com/user-attachments/assets/4ded531c-ef48-4de6-82ea-e37b5f8fab05" />
 
 ### Feature: Movie Details
-<img width="295" height="640" alt="Simulator Screen Recording - iPhone 17 Pro - 2026-07-09 at 17 25 27" src="https://github.com/user-attachments/assets/7e51f9d6-5924-44cb-b4ac-13f7157b5cb3" />
 
+<img width="295" height="640" alt="Movie details screen" src="https://github.com/user-attachments/assets/7e51f9d6-5924-44cb-b4ac-13f7157b5cb3" />
+
+## License
+
+SwiftUI Clean Architecture Showcase is available under the MIT License. See [LICENSE](LICENSE) for details.

@@ -17,7 +17,7 @@ final class MovieSearchViewModel {
 
         do {
             let movies = try await searchMoviesUseCase.execute(query: query)
-            state = movies.isEmpty ? .empty("Nenhum filme encontrado.") : .loaded(movies)
+            state = movies.isEmpty ? .empty("No movies found.") : .loaded(movies)
         } catch {
             state = .failed(Self.message(for: error))
         }
@@ -29,18 +29,18 @@ final class MovieSearchViewModel {
 
     private static func message(for error: Error) -> String {
         guard let movieSearchError = error as? MovieSearchError else {
-            return "Nao foi possivel buscar filmes agora."
+            return "Unable to search movies right now."
         }
 
         switch movieSearchError {
         case .emptyQuery:
-            return "Digite um termo para buscar filmes."
+            return "Enter a search term."
         case .noResults:
-            return "Nenhum filme encontrado para essa busca."
+            return "No movies found for this search."
         case .invalidResponse:
-            return "A resposta da API veio em um formato inesperado."
+            return "The API response used an unexpected format."
         case .requestFailed:
-            return "A busca falhou. Verifique sua conexao e tente novamente."
+            return "Search failed. Check your connection and try again."
         }
     }
 }
